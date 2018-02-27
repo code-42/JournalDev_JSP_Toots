@@ -1,5 +1,6 @@
 package com.journaldev.first;
 
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
@@ -12,9 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ * tutorial https://www.journaldev.com/1854/java-web-application-tutorial-for-beginners
  * Servlet implementation class FirstServlet
  */
-@WebServlet(description = "My First Servlet", urlPatterns = { "/FirstServlet" , "/FirstServlet.do"}, initParams = {@WebInitParam(name="id",value="1"),@WebInitParam(name="name",value="pankaj")})
+@WebServlet(description = "My First Servlet", urlPatterns = { "/FirstServlet" })
 public class FirstServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	public static final String HTML_START="<html><body>";
@@ -32,6 +34,8 @@ public class FirstServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
 		PrintWriter out = response.getWriter();
 		Date date = new Date();
 		out.println(HTML_START + "<h2>Hi There!</h2><br/><h3>Date="+date +"</h3>"+HTML_END);
@@ -42,6 +46,7 @@ public class FirstServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }
